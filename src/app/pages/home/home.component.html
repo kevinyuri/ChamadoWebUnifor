@@ -1,0 +1,34 @@
+<div class="home-container">
+  <p-card class="home-card">
+    <ng-template pTemplate="header">
+      <h2>Bem-vindo ao Sistema de Chamados</h2>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p class="description">
+        Gerencie e visualize chamados de TI de forma rápida e eficiente.
+      </p>
+      <p class="description">
+        Aqui você pode criar novos chamados e acompanhar seus status.
+      </p>
+      <p-divider></p-divider>
+      <div class="button-group">
+        <button
+          pButton
+          pRipple
+          label="Criar Chamado"
+          icon="pi pi-plus"
+          routerLink="/chamado"
+          class="p-button-lg p-button-primary"
+        ></button>
+        <button
+          pButton
+          pRipple
+          label="Ver Chamados"
+          icon="pi pi-list"
+          routerLink="/ver-chamados"
+          class="p-button-lg p-button-secondary"
+        ></button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
