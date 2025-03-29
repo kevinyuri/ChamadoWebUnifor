@@ -7,6 +7,7 @@ export interface Chamado {
   nomeSolicitante: string;
   setor: string;
   mensagem: string;
+  status: string;
 }
 
 @Injectable({
@@ -27,5 +28,16 @@ export class ChamadoService {
 
   getAllChamados(): Observable<Chamado[]> {
     return this.http.get<Chamado[]>(`${this.apiUrl}`);
+  }
+
+  getPrimeiroChamadoDaFila(): Observable<Chamado> {
+    return this.http.get<any>(`${this.apiUrl}/primeiro-chamado`);
+  }
+
+  resolverChamado(chamadoId: number): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiUrl}/resolver-chamado/${chamadoId}`,
+      {}
+    );
   }
 }

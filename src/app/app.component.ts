@@ -41,6 +41,11 @@ export class AppComponent {
         icon: 'pi pi-search',
         routerLink: '/chamados',
       },
+      {
+        label: 'Resolver Primeiro Chamado da Fila',
+        icon: 'pi pi-check',
+        routerLink: '/resolver-chamado',
+      },
     ];
   }
 }

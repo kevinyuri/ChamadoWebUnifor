@@ -9,6 +9,7 @@ interface Chamado {
   nomeSolicitante: string;
   setor: string;
   mensagem: string;
+  status?: string;
 }
 
 @Component({

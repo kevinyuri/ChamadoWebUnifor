@@ -1,0 +1,19 @@
+<p-toast></p-toast>
+<div class="resolver-chamado">
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div class="chamado" *ngIf="chamado">
+    <h2>Chamado #{{ chamado.id }}</h2>
+    <p><strong>Descrição:</strong> {{ chamado.mensagem }}</p>
+    <p><strong>Status:</strong> {{ chamado.status }}</p>
+    <button (click)="resolverChamado()" class="btn btn-success">
+      Resolver Chamado
+    </button>
+  </div>
+
+  <div class="chamado" *ngIf="!chamado">
+    <h2>Sem Chamado na fila</h2>
+  </div>
+</div>

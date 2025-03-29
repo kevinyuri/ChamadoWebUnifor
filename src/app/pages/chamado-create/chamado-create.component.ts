@@ -58,7 +58,9 @@ export class ChamadoCreateComponent {
 
   onSubmit(): void {
     if (this.chamadoForm?.valid) {
-      this.chamadoService.criarChamado(this.chamadoForm.value).subscribe(
+      const payload = this.chamadoForm.value;
+      payload.Status = 'Pendente';
+      this.chamadoService.criarChamado(payload).subscribe(
         (response) => {
           this.messageService.add({
             severity: 'success',
