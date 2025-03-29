@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import { ChamadoComponent } from './pages/chamado/chamado.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ChamadoCreateComponent } from './pages/chamado-create/chamado-create.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redireciona para Home ao acessar "/"
   { path: 'home', component: HomeComponent },
-  { path: 'chamado', component: ChamadoComponent },
-  // { path: 'ver-chamados', component: VerChamadosComponent },
+  { path: 'chamados', component: ChamadoComponent },
+  { path: 'chamados/create', component: ChamadoCreateComponent },
   { path: '**', redirectTo: 'home' }, // Redireciona qualquer rota inválida para Home
 ];

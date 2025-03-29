@@ -20,7 +20,7 @@ import { MenubarModule } from 'primeng/menubar';
     MenubarModule,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'ChamadoWebUnifor';
@@ -34,12 +34,12 @@ export class AppComponent {
       {
         label: 'Cadastrar Chamado',
         icon: 'pi pi-ticket',
-        routerLink: '/chamado',
+        routerLink: '/chamados/create',
       },
       {
         label: 'Ver Chamados',
         icon: 'pi pi-search',
-        routerLink: '/ver-chamados',
+        routerLink: '/chamados',
       },
     ];
   }

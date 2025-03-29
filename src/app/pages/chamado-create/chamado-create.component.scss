@@ -1,0 +1,25 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Para garantir que ocupe toda a altura da tela */
+}
+
+.form-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.p-button {
+  width: 100%;
+}
+
+.p-field {
+  margin-bottom: 1rem;
+}
+
+.p-error {
+  font-size: 0.875rem;
+  color: #f44336;
+}

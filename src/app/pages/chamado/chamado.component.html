@@ -1,1 +1,27 @@
-<p>chamado works! df</p>
+<div class="container">
+  <p-card>
+    <ng-template pTemplate="header">
+      <h2>Lista de Chamados ver</h2>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p-table [value]="chamados" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nome</th>
+            <th>Setor</th>
+            <th>Mensagem</th>
+            <th>Status</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-chamado>
+          <tr>
+            <td>{{ chamado.nomeSolicitante }}</td>
+            <td>{{ chamado.setor }}</td>
+            <td>{{ chamado.mensagem }}</td>
+            <td>{{ chamado.status }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </ng-template>
+  </p-card>
+</div>

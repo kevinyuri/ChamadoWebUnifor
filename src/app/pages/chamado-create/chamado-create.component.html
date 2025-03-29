@@ -1,0 +1,100 @@
+<p-toast></p-toast>
+<div class="form-container">
+  <p-card class="form-card">
+    <ng-template pTemplate="header">
+      <h2>Criar Chamado</h2>
+    </ng-template>
+
+    <ng-template pTemplate="content">
+      <form [formGroup]="chamadoForm" (ngSubmit)="onSubmit()">
+        <div class="p-fluid">
+          <div class="p-field">
+            <label for="nomeSolicitante">Nome do Solicitante</label>
+            <input
+              id="nomeSolicitante"
+              pInputText
+              formControlName="nomeSolicitante"
+              type="text"
+              [ngClass]="{
+                'p-invalid':
+                  chamadoForm.get('nomeSolicitante')?.invalid &&
+                  chamadoForm.get('nomeSolicitante')?.touched
+              }"
+            />
+            <small
+              *ngIf="
+                chamadoForm.get('nomeSolicitante')?.invalid &&
+                chamadoForm.get('nomeSolicitante')?.touched
+              "
+              class="p-error"
+            >
+              Nome é obrigatório e deve ter pelo menos 3 caracteres.
+            </small>
+          </div>
+
+          <div class="p-field">
+            <label for="setor">Setor</label>
+            <p-dropdown
+              id="setor"
+              formControlName="setor"
+              [options]="setores"
+              optionLabel="label"
+              optionValue="value"
+              placeholder="Selecione o setor"
+              [ngClass]="{
+                'p-invalid':
+                  chamadoForm.get('setor')?.invalid &&
+                  chamadoForm.get('setor')?.touched
+              }"
+            ></p-dropdown>
+            <small
+              *ngIf="
+                chamadoForm.get('setor')?.invalid &&
+                chamadoForm.get('setor')?.touched
+              "
+              class="p-error"
+            >
+              Setor é obrigatório.
+            </small>
+          </div>
+
+          <div class="p-field">
+            <label for="mensagem">Mensagem</label>
+            <textarea
+              id="mensagem"
+              pInputTextarea
+              formControlName="mensagem"
+              rows="5"
+              cols="30"
+              [ngClass]="{
+                'p-invalid':
+                  chamadoForm.get('mensagem')?.invalid &&
+                  chamadoForm.get('mensagem')?.touched
+              }"
+            ></textarea>
+            <small
+              *ngIf="
+                chamadoForm.get('mensagem')?.invalid &&
+                chamadoForm.get('mensagem')?.touched
+              "
+              class="p-error"
+            >
+              Mensagem é obrigatória e deve ter pelo menos 10 caracteres.
+            </small>
+          </div>
+
+          <div class="p-field">
+            <button
+              pButton
+              label="Criar Chamado"
+              icon="pi pi-check"
+              type="submit"
+              class="p-button-primary"
+              [disabled]="chamadoForm.invalid"
+            ></button>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+  </p-card>
+</div>
