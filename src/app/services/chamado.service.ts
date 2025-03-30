@@ -14,7 +14,7 @@ export interface Chamado {
   providedIn: 'root',
 })
 export class ChamadoService {
-  private apiUrl = 'https://localhost:7078/api/chamado'; // Altere para o seu backend
+  private apiUrl = 'https://appchamadosunifor-c2dfdpfvdne7gmb6.brazilsouth-01.azurewebsites.net/api/Chamado'; // Altere para o seu backend
 
   constructor(private http: HttpClient) {}
 
